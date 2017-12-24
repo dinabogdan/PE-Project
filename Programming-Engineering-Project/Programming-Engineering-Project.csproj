@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="ILoginDAO.cs" />
+    <Compile Include="LoginDAO.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
