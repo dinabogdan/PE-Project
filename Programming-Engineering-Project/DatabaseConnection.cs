@@ -13,6 +13,7 @@ namespace Programming_Engineering_Project
 	{
 		private static SQLiteConnection connection = null;
 
+
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		public static SQLiteConnection getConnection()
 		{
