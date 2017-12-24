@@ -35,6 +35,7 @@ namespace Programming_Engineering_Project
 					Console.WriteLine("### IsUser: " + isUser);
 					this.Hide();
 					MainForm mainForm = new MainForm();
+					mainForm.Username = this.TextBoxUsername.Text;
 					mainForm.Show();
 				}
 				else
