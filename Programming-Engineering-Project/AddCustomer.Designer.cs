@@ -31,6 +31,8 @@ namespace Programming_Engineering_Project
 		private void InitializeComponent()
 		{
 			this.mainPanel = new System.Windows.Forms.Panel();
+			this.lblCustDetailsError = new System.Windows.Forms.Label();
+			this.lblCustInfoError = new System.Windows.Forms.Label();
 			this.btnNewCustomer = new System.Windows.Forms.Button();
 			this.cbCurrency = new System.Windows.Forms.ComboBox();
 			this.cbAccountType = new System.Windows.Forms.ComboBox();
@@ -67,12 +69,16 @@ namespace Programming_Engineering_Project
 			this.lblLastName = new System.Windows.Forms.Label();
 			this.lblFirstName = new System.Windows.Forms.Label();
 			this.lblCustomerInfo = new System.Windows.Forms.Label();
+			this.lblAccountInfoError = new System.Windows.Forms.Label();
 			this.mainPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudStreetNo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// mainPanel
 			// 
+			this.mainPanel.Controls.Add(this.lblAccountInfoError);
+			this.mainPanel.Controls.Add(this.lblCustDetailsError);
+			this.mainPanel.Controls.Add(this.lblCustInfoError);
 			this.mainPanel.Controls.Add(this.btnNewCustomer);
 			this.mainPanel.Controls.Add(this.cbCurrency);
 			this.mainPanel.Controls.Add(this.cbAccountType);
@@ -114,6 +120,27 @@ namespace Programming_Engineering_Project
 			this.mainPanel.Size = new System.Drawing.Size(485, 398);
 			this.mainPanel.TabIndex = 0;
 			// 
+			// lblCustDetailsError
+			// 
+			this.lblCustDetailsError.AutoSize = true;
+			this.lblCustDetailsError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblCustDetailsError.ForeColor = System.Drawing.Color.Red;
+			this.lblCustDetailsError.Location = new System.Drawing.Point(249, 113);
+			this.lblCustDetailsError.Name = "lblCustDetailsError";
+			this.lblCustDetailsError.Size = new System.Drawing.Size(0, 24);
+			this.lblCustDetailsError.TabIndex = 37;
+			// 
+			// lblCustInfoError
+			// 
+			this.lblCustInfoError.AutoSize = true;
+			this.lblCustInfoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblCustInfoError.ForeColor = System.Drawing.Color.Red;
+			this.lblCustInfoError.Location = new System.Drawing.Point(249, 16);
+			this.lblCustInfoError.Name = "lblCustInfoError";
+			this.lblCustInfoError.Size = new System.Drawing.Size(0, 24);
+			this.lblCustInfoError.TabIndex = 36;
+			this.lblCustInfoError.Visible = false;
+			// 
 			// btnNewCustomer
 			// 
 			this.btnNewCustomer.Location = new System.Drawing.Point(207, 359);
@@ -122,6 +149,7 @@ namespace Programming_Engineering_Project
 			this.btnNewCustomer.TabIndex = 35;
 			this.btnNewCustomer.Text = "Add";
 			this.btnNewCustomer.UseVisualStyleBackColor = true;
+			this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
 			// 
 			// cbCurrency
 			// 
@@ -427,6 +455,17 @@ namespace Programming_Engineering_Project
 			this.lblCustomerInfo.TabIndex = 0;
 			this.lblCustomerInfo.Text = "Customer informations";
 			// 
+			// lblAccountInfoError
+			// 
+			this.lblAccountInfoError.AutoSize = true;
+			this.lblAccountInfoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblAccountInfoError.ForeColor = System.Drawing.Color.Red;
+			this.lblAccountInfoError.Location = new System.Drawing.Point(249, 256);
+			this.lblAccountInfoError.Name = "lblAccountInfoError";
+			this.lblAccountInfoError.Size = new System.Drawing.Size(0, 24);
+			this.lblAccountInfoError.TabIndex = 38;
+			this.lblAccountInfoError.Visible = false;
+			// 
 			// AddCustomer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,6 +592,10 @@ namespace Programming_Engineering_Project
 		public TextBox TxtBoxAccountNo { get { return this.txtBoxAccountNo; } }
 
 		private Button btnNewCustomer;
+		private Label lblCustInfoError;
+		private Label lblCustDetailsError;
+		private Label lblAccountInfoError;
+
 		public Button BtnNewCustomer { get { return this.btnNewCustomer; } }
 	}
 }

@@ -35,6 +35,34 @@ namespace Programming_Engineering_Project
 			command.ExecuteNonQuery();
 		}
 
+		public void addCustomerAccounts(Customer customer, SQLiteConnection connection)
+		{
+			SQLiteCommand command = new SQLiteCommand(null, connection);
+			command.CommandText = "INSERT INTO Cust_Account (CUSTOMER_ID, ACCOUNT_NUMBER, ACCOUNT_TYPE, CURRENCY, AMOUNT, OPEN_DATE) " +
+								"VALUES ((SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS), @accountNo, @accountType, @currency, @amount, SYSDATE)";
+			foreach (Account account in customer.CustomerAccounts)
+			{
+				SQLiteParameter accountNoParam = new SQLiteParameter("@accountNo", DbType.Int32);
+				SQLiteParameter accountTypeParam = new SQLiteParameter("@accountType", DbType.Int16);
+				SQLiteParameter currencyParam = new SQLiteParameter("@currency", DbType.String);
+				SQLiteParameter amountParam = new SQLiteParameter("@amount", DbType.Decimal);
+
+				accountNoParam.Value = account.AccountNo;
+				accountTypeParam.Value = account.AccountType;
+				currencyParam.Value = account.Currency;
+				amountParam.Value = account.Ammount;
+
+				command.Parameters.Add(accountNoParam);
+				command.Parameters.Add(accountTypeParam);
+				command.Parameters.Add(currencyParam);
+				command.Parameters.Add(amountParam);
+
+				command.Prepare();
+				command.ExecuteNonQuery();
+			}
+
+		}
+
 		public void addCustomerDetails(Customer customer, SQLiteConnection connection)
 		{
 			SQLiteCommand command = new SQLiteCommand(null, connection);

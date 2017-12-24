@@ -16,5 +16,10 @@ namespace Programming_Engineering_Project
 		{
 			InitializeComponent();
 		}
+
+		private void btnNewCustomer_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

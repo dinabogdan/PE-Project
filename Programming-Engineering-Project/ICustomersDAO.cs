@@ -11,6 +11,7 @@ namespace Programming_Engineering_Project
 	{
 		void addCustomer(Customer customer, SQLiteConnection connection);
 		void addCustomerDetails(Customer customer, SQLiteConnection connection);
+		void addCustomerAccounts(Customer customer, SQLiteConnection connection);
 
 		List<Customer> getAllCustomers(SQLiteConnection connection);
 	}
