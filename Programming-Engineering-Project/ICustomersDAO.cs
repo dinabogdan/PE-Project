@@ -10,6 +10,8 @@ namespace Programming_Engineering_Project
 	interface ICustomersDAO
 	{
 		void addCustomer(Customer customer, SQLiteConnection connection);
+		void addCustomerDetails(Customer customer, SQLiteConnection connection);
+
 		List<Customer> getAllCustomers(SQLiteConnection connection);
 	}
 }
