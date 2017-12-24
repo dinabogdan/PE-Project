@@ -30,11 +30,13 @@ namespace Programming_Engineering_Project
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.mainPanel = new System.Windows.Forms.Panel();
 			this.lvMain = new System.Windows.Forms.ListView();
 			this.lblWelcome = new System.Windows.Forms.Label();
 			this.btnAllCustomers = new System.Windows.Forms.Button();
 			this.btnAllAccounts = new System.Windows.Forms.Button();
+			this.btnAdd = new System.Windows.Forms.Button();
 			this.mainPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -83,11 +85,24 @@ namespace Programming_Engineering_Project
 			this.btnAllAccounts.Text = "All accounts";
 			this.btnAllAccounts.UseVisualStyleBackColor = true;
 			// 
+			// btnAdd
+			// 
+			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnAdd.Location = new System.Drawing.Point(535, 44);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(129, 39);
+			this.btnAdd.TabIndex = 4;
+			this.btnAdd.Text = "Add";
+			this.btnAdd.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(676, 355);
+			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.btnAllAccounts);
 			this.Controls.Add(this.btnAllCustomers);
 			this.Controls.Add(this.lblWelcome);
@@ -108,6 +123,7 @@ namespace Programming_Engineering_Project
 		private Label lblWelcome;
 		private Button btnAllCustomers;
 		private Button btnAllAccounts;
+		private Button btnAdd;
 
 		public Panel MainPanel
 		{

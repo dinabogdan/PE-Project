@@ -21,11 +21,9 @@ namespace Programming_Engineering_Project
 		private String locality;
 		private String street;
 		private int streetNo;
+		private List<Account> customerAccounts;
 
-		public Customer()
-		{
-
-		}
+		public Customer() { }
 
 		public int CustomerId { get { return this.customerId; } set { this.customerId = value; } }
 
@@ -52,5 +50,7 @@ namespace Programming_Engineering_Project
 		public String Street { get { return this.street; } set { this.street = value; } }
 
 		public int StreetNo { get { return this.streetNo; } set { this.streetNo = value; } }
+
+		public List<Account> CustomerAccounts { get { return this.customerAccounts; } set { this.customerAccounts = value; } }
 	}
 }

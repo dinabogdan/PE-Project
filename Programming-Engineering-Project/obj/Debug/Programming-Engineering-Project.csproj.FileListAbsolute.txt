@@ -18,3 +18,4 @@ C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engi
 C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\obj\Debug\Programming-Engineering-Project.csprojResolveAssemblyReference.cache
 C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\obj\Debug\Programming_Engineering_Project.MainForm.resources
 C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\obj\Debug\Programming_Engineering_Project.LoginForm.resources
+C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\obj\Debug\Programming_Engineering_Project.AddCustomer.resources
