@@ -90,7 +90,7 @@ namespace Programming_Engineering_Project
 			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
 			this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnAdd.Location = new System.Drawing.Point(535, 44);
+			this.btnAdd.Location = new System.Drawing.Point(523, 44);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(129, 39);
 			this.btnAdd.TabIndex = 4;

@@ -20,10 +20,11 @@ namespace Programming_Engineering_Project
 		private void btnNewCustomer_Click(object sender, EventArgs e)
 		{
 			Customer customer = new Customer();
-			customer.LastName = this.TxtBoxLastName.Text;
-			customer.FirstName = this.TxtBoxFirstName.Text;
-			customer.Cnp = this.TxtBoxCnp.Text;
-			customer.BirthDate = this.DpBirthdate.Text;
+			//aici trebuie reparat -> validez inputurile si apoi validez obiectul
+			//customer.LastName = this.TxtBoxLastName.Text;
+			//customer.FirstName = this.TxtBoxFirstName.Text;
+			//customer.Cnp = this.TxtBoxCnp.Text;
+			//customer.BirthDate = this.DpBirthdate.Text;
 
 			Dictionary<String, String> errors = Utils.validateCustInfo(customer);
 
