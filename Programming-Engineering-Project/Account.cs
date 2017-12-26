@@ -9,7 +9,7 @@ namespace Programming_Engineering_Project
 	class Account
 	{
 		private int accountNo;
-		private int accountType;
+		private String accountType;
 		private String currency;
 		private float ammount;
 		private String openDate;
@@ -18,7 +18,7 @@ namespace Programming_Engineering_Project
 
 		public int AccountNo { get { return this.accountNo; }  set { this.accountNo = value; } }
 		
-		public int AccountType { get { return this.accountType; } set { this.accountType = value; } }
+		public String AccountType { get { return this.accountType; } set { this.accountType = value; } }
 
 		public String Currency { get { return this.currency; } set { this.currency = value;  } }
 

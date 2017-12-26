@@ -14,7 +14,7 @@ namespace Programming_Engineering_Project
 		{
 			Dictionary<String, String> errors = new Dictionary<String, String>();
 
-			if (customer.FirstName != null && customer.FirstName.Length > 0)
+			if (!String.IsNullOrEmpty(customer.FirstName))
 			{
 				Regex regex = new Regex(@"^[a-zA-Z- ]{3,30}$");
 				if (!regex.IsMatch(customer.FirstName)) { errors.Add("firstNameErr", "First name is not valid!"); }
@@ -24,7 +24,7 @@ namespace Programming_Engineering_Project
 				errors.Add("firstNameErr", "First name is empty!");
 			}
 
-			if (customer.LastName != null && customer.LastName.Length > 0)
+			if (!String.IsNullOrEmpty(customer.LastName))
 			{
 				Regex regex = new Regex(@"^[a-zA-Z- ]{3,30}$");
 				if (!regex.IsMatch(customer.LastName)) { errors.Add("lastNameErr", "Last name is not valid!"); }
@@ -34,7 +34,7 @@ namespace Programming_Engineering_Project
 				errors.Add("lastNameErr", "Last name is empty!");
 			}
 
-			if (customer.Cnp != null && customer.Cnp.Length > 0)
+			if (String.IsNullOrWhiteSpace(customer.Cnp))
 			{
 				Regex regex = new Regex(@"^[0-9]{13}$");
 				if (!regex.IsMatch(customer.Cnp)) { errors.Add("cnpErr", "CNP is not valid!"); }
@@ -44,14 +44,14 @@ namespace Programming_Engineering_Project
 				errors.Add("cnpErr", "CNP is empty!");
 			}
 
-			if (customer.BirthDate == null || customer.BirthDate.Length > 0) { errors.Add("birthDateErr", "Birthdate is empty!"); }
+			if (String.IsNullOrWhiteSpace(customer.BirthDate)) { errors.Add("birthDateErr", "Birthdate is empty!"); }
 
 			return errors;
 		}
 		public static Dictionary<String, String> validateCustDetails(Customer customer)
 		{
 			Dictionary<String, String> errors = new Dictionary<string, string>();
-			if (customer.Phone != null && customer.Phone.Length > 0)
+			if (!String.IsNullOrWhiteSpace(customer.Phone))
 			{
 				Regex regex = new Regex(@"^[0-10]{10}$");
 				if (!regex.IsMatch(customer.Phone)) { errors.Add("phoneErr", "Phone is not valid!"); }
@@ -61,7 +61,7 @@ namespace Programming_Engineering_Project
 				errors.Add("phoneErr", "Phone is empty!");
 			}
 
-			if (customer.Email != null && customer.Email.Length > 0)
+			if (!String.IsNullOrWhiteSpace(customer.Email))
 			{
 				try
 				{
@@ -77,7 +77,7 @@ namespace Programming_Engineering_Project
 				errors.Add("emailErr", "The Email is empty!");
 			}
 
-			if (customer.Country != null && customer.Country.Length > 0)
+			if (!String.IsNullOrWhiteSpace(customer.Country))
 			{
 				if (!customer.Country.Equals("Romania")) { errors.Add("countryErr", "Country must be 'Romania'!"); }
 			}
@@ -86,12 +86,12 @@ namespace Programming_Engineering_Project
 				errors.Add("countryErr", "Country is empty!");
 			}
 
-			if (!(customer.County != null && customer.County.Length > 0))
+			if (String.IsNullOrWhiteSpace(customer.County))
 			{
 				errors.Add("countyErr", "County is empty!");
 			}
 
-			if (customer.Locality != null && customer.Locality.Length > 0)
+			if (!String.IsNullOrWhiteSpace(customer.Locality))
 			{
 				Regex regex = new Regex(@"^[a-zA-Z -]{3, 50}$");
 				if (!regex.IsMatch(customer.Locality)) { errors.Add("localityErr", "Locality is not valid!"); }
@@ -106,6 +106,49 @@ namespace Programming_Engineering_Project
 				errors.Add("streetNo", "Street No. is empty!");
 			}
 
+
+			return errors;
+		}
+		public static Dictionary<String, String> validateCustAccount(Account account)
+		{
+			Dictionary<String, String> errors = new Dictionary<String, String>();
+
+			if (account.AccountNo > 0)
+			{
+				Regex regex = new Regex(@"^[0-9]{6}$");
+				if (!regex.IsMatch(account.AccountNo.ToString())) { errors.Add("accountNoErr", "Account No. is not valid!"); }
+			}
+			else
+			{
+				errors.Add("accountNoErr", "Account No. is empty!");
+			}
+
+			if (!String.IsNullOrEmpty(account.AccountType))
+			{
+				Regex regex = new Regex(@"^[a-zA-Z ]{3,15}$");
+				if (!regex.IsMatch(account.AccountType)) { errors.Add("accountTypeErr", "Account Type is not valid!"); }
+			}
+			else
+			{
+				errors.Add("accountTypeErr", "Account type is empty!");
+			}
+
+			if (!String.IsNullOrEmpty(account.Currency))
+			{
+				if (!("RON".Equals(account.Currency) || "EUR".Equals(account.Currency) || "USD".Equals(account.Currency)))
+				{
+					errors.Add("currencyErr", "Currency is not valid!");
+				}
+			}
+			else
+			{
+				errors.Add("currencyErr", "Currency is empty!");
+			}
+
+			if (String.IsNullOrEmpty(account.Ammount.ToString()))
+			{
+				errors.Add("amountErr", "Amount is empty!");
+			}
 
 			return errors;
 		}
