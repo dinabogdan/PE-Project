@@ -45,5 +45,12 @@ namespace Programming_Engineering_Project
 			Console.WriteLine("### Connection is: " + connection.State.ToString());
 			connection.Close();
 		}
+
+		private void btnAdd_Click(object sender, EventArgs e)
+		{
+			AddCustomer addCustomerForm = new AddCustomer();
+			this.Hide();
+			addCustomerForm.Show();
+		}
 	}
 }

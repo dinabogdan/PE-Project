@@ -35,8 +35,6 @@ namespace Programming_Engineering_Project
 				this.LblAccountInfoError.Visible = true;
 				return;
 			}
-
-			
 		}
 	}
 }
