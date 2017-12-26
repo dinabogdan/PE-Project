@@ -592,10 +592,15 @@ namespace Programming_Engineering_Project
 		public TextBox TxtBoxAccountNo { get { return this.txtBoxAccountNo; } }
 
 		private Button btnNewCustomer;
-		private Label lblCustInfoError;
-		private Label lblCustDetailsError;
-		private Label lblAccountInfoError;
-
 		public Button BtnNewCustomer { get { return this.btnNewCustomer; } }
+
+		private Label lblCustInfoError;
+		public Label LblCustInfoError { get { return this.lblCustInfoError; } }
+
+		private Label lblCustDetailsError;
+		public Label LblCustDetailsError { get { return this.lblCustDetailsError; } }
+
+		private Label lblAccountInfoError;
+		public Label LblAccountInfoError { get { return this.lblAccountInfoError; } }
 	}
 }

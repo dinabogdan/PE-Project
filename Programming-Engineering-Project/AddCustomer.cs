@@ -19,7 +19,24 @@ namespace Programming_Engineering_Project
 
 		private void btnNewCustomer_Click(object sender, EventArgs e)
 		{
+			Customer customer = new Customer();
+			customer.LastName = this.TxtBoxLastName.Text;
+			customer.FirstName = this.TxtBoxFirstName.Text;
+			customer.Cnp = this.TxtBoxCnp.Text;
+			customer.BirthDate = this.DpBirthdate.Text;
 
+			Dictionary<String, String> errors = Utils.validateCustInfo(customer);
+
+			if (errors.Count != 0)
+			{
+				String errorMessage = null;
+				errors.TryGetValue(errors.Keys.First<string>(), out errorMessage);
+				this.LblAccountInfoError.Text = errorMessage;
+				this.LblAccountInfoError.Visible = true;
+				return;
+			}
+
+			
 		}
 	}
 }
