@@ -31,6 +31,7 @@ namespace Programming_Engineering_Project
 		private void InitializeComponent()
 		{
 			this.mainPanel = new System.Windows.Forms.Panel();
+			this.lblAccountInfoError = new System.Windows.Forms.Label();
 			this.lblCustDetailsError = new System.Windows.Forms.Label();
 			this.lblCustInfoError = new System.Windows.Forms.Label();
 			this.btnNewCustomer = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@ namespace Programming_Engineering_Project
 			this.lblLastName = new System.Windows.Forms.Label();
 			this.lblFirstName = new System.Windows.Forms.Label();
 			this.lblCustomerInfo = new System.Windows.Forms.Label();
-			this.lblAccountInfoError = new System.Windows.Forms.Label();
 			this.mainPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudStreetNo)).BeginInit();
 			this.SuspendLayout();
@@ -117,15 +117,26 @@ namespace Programming_Engineering_Project
 			this.mainPanel.Controls.Add(this.lblCustomerInfo);
 			this.mainPanel.Location = new System.Drawing.Point(13, 13);
 			this.mainPanel.Name = "mainPanel";
-			this.mainPanel.Size = new System.Drawing.Size(485, 398);
+			this.mainPanel.Size = new System.Drawing.Size(477, 398);
 			this.mainPanel.TabIndex = 0;
+			// 
+			// lblAccountInfoError
+			// 
+			this.lblAccountInfoError.AutoSize = true;
+			this.lblAccountInfoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblAccountInfoError.ForeColor = System.Drawing.Color.Red;
+			this.lblAccountInfoError.Location = new System.Drawing.Point(236, 256);
+			this.lblAccountInfoError.Name = "lblAccountInfoError";
+			this.lblAccountInfoError.Size = new System.Drawing.Size(0, 24);
+			this.lblAccountInfoError.TabIndex = 38;
+			this.lblAccountInfoError.Visible = false;
 			// 
 			// lblCustDetailsError
 			// 
 			this.lblCustDetailsError.AutoSize = true;
 			this.lblCustDetailsError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblCustDetailsError.ForeColor = System.Drawing.Color.Red;
-			this.lblCustDetailsError.Location = new System.Drawing.Point(249, 113);
+			this.lblCustDetailsError.Location = new System.Drawing.Point(236, 113);
 			this.lblCustDetailsError.Name = "lblCustDetailsError";
 			this.lblCustDetailsError.Size = new System.Drawing.Size(0, 24);
 			this.lblCustDetailsError.TabIndex = 37;
@@ -135,7 +146,7 @@ namespace Programming_Engineering_Project
 			this.lblCustInfoError.AutoSize = true;
 			this.lblCustInfoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblCustInfoError.ForeColor = System.Drawing.Color.Red;
-			this.lblCustInfoError.Location = new System.Drawing.Point(249, 16);
+			this.lblCustInfoError.Location = new System.Drawing.Point(236, 16);
 			this.lblCustInfoError.Name = "lblCustInfoError";
 			this.lblCustInfoError.Size = new System.Drawing.Size(0, 24);
 			this.lblCustInfoError.TabIndex = 36;
@@ -234,9 +245,24 @@ namespace Programming_Engineering_Project
 			// nudStreetNo
 			// 
 			this.nudStreetNo.Location = new System.Drawing.Point(346, 225);
+			this.nudStreetNo.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+			this.nudStreetNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nudStreetNo.Name = "nudStreetNo";
 			this.nudStreetNo.Size = new System.Drawing.Size(100, 20);
 			this.nudStreetNo.TabIndex = 25;
+			this.nudStreetNo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			// 
 			// txtBoxStreet
 			// 
@@ -455,22 +481,11 @@ namespace Programming_Engineering_Project
 			this.lblCustomerInfo.TabIndex = 0;
 			this.lblCustomerInfo.Text = "Customer informations";
 			// 
-			// lblAccountInfoError
-			// 
-			this.lblAccountInfoError.AutoSize = true;
-			this.lblAccountInfoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblAccountInfoError.ForeColor = System.Drawing.Color.Red;
-			this.lblAccountInfoError.Location = new System.Drawing.Point(249, 256);
-			this.lblAccountInfoError.Name = "lblAccountInfoError";
-			this.lblAccountInfoError.Size = new System.Drawing.Size(0, 24);
-			this.lblAccountInfoError.TabIndex = 38;
-			this.lblAccountInfoError.Visible = false;
-			// 
 			// AddCustomer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(510, 420);
+			this.ClientSize = new System.Drawing.Size(508, 420);
 			this.Controls.Add(this.mainPanel);
 			this.Name = "AddCustomer";
 			this.Text = "Add Customer";

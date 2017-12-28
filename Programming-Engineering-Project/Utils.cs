@@ -14,16 +14,6 @@ namespace Programming_Engineering_Project
 		{
 			Dictionary<String, String> errors = new Dictionary<String, String>();
 
-			if (!String.IsNullOrEmpty(customer.FirstName))
-			{
-				Regex regex = new Regex(@"^[a-zA-Z- ]{3,30}$");
-				if (!regex.IsMatch(customer.FirstName)) { errors.Add("firstNameErr", "First name is not valid!"); }
-			}
-			else
-			{
-				errors.Add("firstNameErr", "First name is empty!");
-			}
-
 			if (!String.IsNullOrEmpty(customer.LastName))
 			{
 				Regex regex = new Regex(@"^[a-zA-Z- ]{3,30}$");
@@ -32,6 +22,16 @@ namespace Programming_Engineering_Project
 			else
 			{
 				errors.Add("lastNameErr", "Last name is empty!");
+			}
+
+			if (!String.IsNullOrEmpty(customer.FirstName))
+			{
+				Regex regex = new Regex(@"^[a-zA-Z- ]{3,30}$");
+				if (!regex.IsMatch(customer.FirstName)) { errors.Add("firstNameErr", "First name is not valid!"); }
+			}
+			else
+			{
+				errors.Add("firstNameErr", "First name is empty!");
 			}
 
 			if (!String.IsNullOrWhiteSpace(customer.Cnp))
@@ -50,10 +50,10 @@ namespace Programming_Engineering_Project
 		}
 		public static Dictionary<String, String> validateCustDetails(Customer customer)
 		{
-			Dictionary<String, String> errors = new Dictionary<string, string>();
+			Dictionary<String, String> errors = new Dictionary<String, String>();
 			if (!String.IsNullOrWhiteSpace(customer.Phone))
 			{
-				Regex regex = new Regex(@"^[0-10]{10}$");
+				Regex regex = new Regex(@"^[0-9]{10}$");
 				if (!regex.IsMatch(customer.Phone)) { errors.Add("phoneErr", "Phone is not valid!"); }
 			}
 			else
@@ -93,7 +93,7 @@ namespace Programming_Engineering_Project
 
 			if (!String.IsNullOrWhiteSpace(customer.Locality))
 			{
-				Regex regex = new Regex(@"^[a-zA-Z -]{3, 50}$");
+				Regex regex = new Regex(@"^[a-zA-Z- ]{3,30}$");
 				if (!regex.IsMatch(customer.Locality)) { errors.Add("localityErr", "Locality is not valid!"); }
 			}
 			else
