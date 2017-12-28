@@ -21,10 +21,10 @@ namespace Programming_Engineering_Project
 		{
 			Customer customer = new Customer();
 			//aici trebuie reparat -> validez inputurile si apoi validez obiectul
-			//customer.LastName = this.TxtBoxLastName.Text;
-			//customer.FirstName = this.TxtBoxFirstName.Text;
-			//customer.Cnp = this.TxtBoxCnp.Text;
-			//customer.BirthDate = this.DpBirthdate.Text;
+			customer.LastName = this.TxtBoxLastName.Text;
+			customer.FirstName = this.TxtBoxFirstName.Text;
+			customer.Cnp = this.TxtBoxCnp.Text;
+			customer.BirthDate = this.DpBirthdate.Text;
 
 			Dictionary<String, String> errors = Utils.validateCustInfo(customer);
 
@@ -32,8 +32,8 @@ namespace Programming_Engineering_Project
 			{
 				String errorMessage = null;
 				errors.TryGetValue(errors.Keys.First<string>(), out errorMessage);
-				this.LblAccountInfoError.Text = errorMessage;
-				this.LblAccountInfoError.Visible = true;
+				this.LblCustInfoError.Text = errorMessage;
+				this.LblCustInfoError.Visible = true;
 				return;
 			}
 		}

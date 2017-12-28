@@ -34,7 +34,7 @@ namespace Programming_Engineering_Project
 				errors.Add("lastNameErr", "Last name is empty!");
 			}
 
-			if (String.IsNullOrWhiteSpace(customer.Cnp))
+			if (!String.IsNullOrWhiteSpace(customer.Cnp))
 			{
 				Regex regex = new Regex(@"^[0-9]{13}$");
 				if (!regex.IsMatch(customer.Cnp)) { errors.Add("cnpErr", "CNP is not valid!"); }

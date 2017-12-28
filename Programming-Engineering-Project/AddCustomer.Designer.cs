@@ -496,7 +496,7 @@ namespace Programming_Engineering_Project
 		public Label LblFirstName { get { return this.LblFirstName; } }
 
 		private TextBox txtBoxFirstName;
-		public TextBox TxtBoxFirstName { get { return this.TxtBoxFirstName; } }
+		public TextBox TxtBoxFirstName { get { return this.txtBoxFirstName; } }
 
 		private TextBox txtBoxLastName;
 		public TextBox TxtBoxLastName { get { return this.txtBoxLastName; } }
