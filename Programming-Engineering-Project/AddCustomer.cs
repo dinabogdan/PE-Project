@@ -67,10 +67,32 @@ namespace Programming_Engineering_Project
 			{
 				String errorMessage = null;
 				errors.TryGetValue(errors.Keys.First<string>(), out errorMessage);
-				this.LblAccountInfo.Text = errorMessage;
-				this.LblAccountInfo.Visible = true;
+				this.LblAccountInfoError.Text = errorMessage;
+				this.LblAccountInfoError.Visible = true;
 				return;
 			}
+		}
+
+		private void AddCustomer_Load(object sender, EventArgs e)
+		{
+			var accountTypeDataSource = new Dictionary<int, String>();
+			accountTypeDataSource.Add(1, "Checking account");
+			accountTypeDataSource.Add(2, "Savings account");
+			accountTypeDataSource.Add(3, "Certificate of Deposit");
+			accountTypeDataSource.Add(4, "Money market account");
+			accountTypeDataSource.Add(5, "Individual Retirement Accounts");
+			this.cbAccountType.DataSource = new BindingSource(accountTypeDataSource, null);
+			this.cbAccountType.DisplayMember = "Value";
+			this.cbAccountType.ValueMember = "Key";
+
+			var currencyDataSource = new Dictionary<int, String>();
+			currencyDataSource.Add(1, "RON");
+			currencyDataSource.Add(2, "EUR");
+			currencyDataSource.Add(3, "USD");
+			currencyDataSource.Add(4, "GPB");
+			this.cbCurrency.DataSource = new BindingSource(currencyDataSource, null);
+			this.cbCurrency.DisplayMember = "Value";
+			this.cbCurrency.ValueMember = "Key";
 		}
 	}
 }

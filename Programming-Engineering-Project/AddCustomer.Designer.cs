@@ -489,6 +489,7 @@ namespace Programming_Engineering_Project
 			this.Controls.Add(this.mainPanel);
 			this.Name = "AddCustomer";
 			this.Text = "Add Customer";
+			this.Load += new System.EventHandler(this.AddCustomer_Load);
 			this.mainPanel.ResumeLayout(false);
 			this.mainPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudStreetNo)).EndInit();
