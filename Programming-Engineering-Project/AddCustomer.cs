@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Programming_Engineering_Project
 {
@@ -69,7 +70,16 @@ namespace Programming_Engineering_Project
 
 
 			if (errors.Count == 0) {
-
+				SQLiteConnection connection = DatabaseConnection.getConnection();
+				connection.Open();
+				ICustomersDAO customersDao = new CustomersDAO();
+				customersDao.addCustomer(customer, connection);
+				customersDao.addCustomerDetails(customer, connection);
+				List<Account> custAccounts = new List<Account>();
+				custAccounts.Add(account);
+				customer.CustomerAccounts = custAccounts;
+				customersDao.addCustomerAccounts(customer, connection);
+				connection.Close();
 			}
 
 		}

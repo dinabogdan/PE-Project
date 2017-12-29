@@ -133,7 +133,7 @@ namespace Programming_Engineering_Project
 
 			if (!String.IsNullOrEmpty(account.AccountType))
 			{
-				Regex regex = new Regex(@"^[a-zA-Z ]{3,15}$");
+				Regex regex = new Regex(@"^[1-5]{1}$");
 				if (!regex.IsMatch(account.AccountType)) { errors.Add("accountTypeErr", "Account Type is not valid!"); return errors; }
 			}
 			else
@@ -144,11 +144,8 @@ namespace Programming_Engineering_Project
 
 			if (!String.IsNullOrEmpty(account.Currency))
 			{
-				if (!("RON".Equals(account.Currency) || "EUR".Equals(account.Currency) || "USD".Equals(account.Currency)))
-				{
-					errors.Add("currencyErr", "Currency is not valid!");
-					return errors;
-				}
+				Regex regex = new Regex(@"^[1-4]{1}$");
+				if (!regex.IsMatch(account.Currency)) { errors.Add("currencyErr", "Currency is not valid!"); return errors; }
 			}
 			else
 			{
