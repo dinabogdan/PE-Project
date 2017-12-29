@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
+using System;
 
 namespace Programming_Engineering_Project
 {
 	class Utils
 	{
-		public static void initCustListViewHeaders(ListView listView)
+		internal static void initCustListViewHeaders(ListView listView)
 		{
+			listView.Columns.Clear();
 			listView.Columns.Add("First Name", 70, HorizontalAlignment.Center);
 			listView.Columns.Add("Last Name", 70, HorizontalAlignment.Center);
 			listView.Columns.Add("CNP", 70, HorizontalAlignment.Center);
@@ -42,6 +44,66 @@ namespace Programming_Engineering_Project
 				lvMain.Items.Add(lvItem);
 			}
 
+		}
+
+		internal static void addAccountsToListView(ListView lvMain, List<Account> accounts)
+		{
+			lvMain.Items.Clear();
+			foreach (Account account in accounts)
+			{
+				ListViewItem lvItem = new ListViewItem(account.AccountNo.ToString());
+				lvItem.SubItems.Add(account.AccountType.ToUpper());
+				lvItem.SubItems.Add(account.Currency.ToUpper());
+				lvItem.SubItems.Add(account.Ammount.ToString());
+				lvItem.SubItems.Add(account.OpenDate.ToString());
+				lvMain.Items.Add(lvItem);
+			}
+		}
+
+		internal static void initAcctListViewHeaders(ListView listView)
+		{
+			listView.Columns.Clear();
+			listView.Columns.Add("Account No.", 70, HorizontalAlignment.Center);
+			listView.Columns.Add("Account Type", 120, HorizontalAlignment.Center);
+			listView.Columns.Add("Currency", 40, HorizontalAlignment.Center);
+			listView.Columns.Add("Amount", 40, HorizontalAlignment.Center);
+			listView.Columns.Add("Open Date", 60, HorizontalAlignment.Center);
+		}
+
+		internal static string getStringCurrencyFromString(String currency)
+		{
+			switch (currency)
+			{
+				case "1":
+					return "RON";
+				case "2":
+					return "EUR";
+				case "3":
+					return "USD";
+				case "4":
+					return "GPB";
+				default:
+					return null;
+			}
+		}
+
+		internal static string getStringAccTypeFromInt(int accountType)
+		{
+			switch (accountType)
+			{
+				case 1:
+					return "Checking account";
+				case 2:
+					return "Savings account";
+				case 3:
+					return "Certificate of Deposit";
+				case 4:
+					return "Money market account";
+				case 5:
+					return "Individual Retirement Accounts";
+				default:
+					return null;
+			}
 		}
 	}
 }

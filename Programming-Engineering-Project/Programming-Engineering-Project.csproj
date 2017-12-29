@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AccountsDAO.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomersDAO.cs" />
     <Compile Include="DatabaseConnection.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="IAccountsDAO.cs" />
     <Compile Include="ICustomersDAO.cs" />
     <Compile Include="ILoginDAO.cs" />
     <Compile Include="LoginDAO.cs" />

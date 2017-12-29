@@ -87,6 +87,7 @@ namespace Programming_Engineering_Project
 			this.btnAllAccounts.TabIndex = 3;
 			this.btnAllAccounts.Text = "All accounts";
 			this.btnAllAccounts.UseVisualStyleBackColor = true;
+			this.btnAllAccounts.Click += new System.EventHandler(this.btnAllAccounts_Click);
 			// 
 			// btnAdd
 			// 

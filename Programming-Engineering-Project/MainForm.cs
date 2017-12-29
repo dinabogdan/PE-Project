@@ -57,5 +57,17 @@ namespace Programming_Engineering_Project
 			this.Hide();
 			addCustomerForm.Show();
 		}
+
+		private void btnAllAccounts_Click(object sender, EventArgs e)
+		{
+			SQLiteConnection connection = DatabaseConnection.getConnection();
+			connection.Open();
+			lvMain.View = View.Details;
+			Utils.initAcctListViewHeaders(lvMain);
+			IAccountsDAO accountsDao = new AccountsDAO();
+			List<Account> accounts = accountsDao.getAllAccounts(connection);
+			Utils.addAccountsToListView(lvMain, accounts);
+			connection.Close();
+		}
 	}
 }
