@@ -39,7 +39,7 @@ namespace Programming_Engineering_Project
 		{
 			SQLiteCommand command = new SQLiteCommand(null, connection);
 			command.CommandText = "INSERT INTO Cust_Account (CUSTOMER_ID, ACCOUNT_NUMBER, ACCOUNT_TYPE, CURRENCY, AMOUNT, OPEN_DATE) " +
-								"VALUES ((SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS), @accountNo, @accountType, @currency, @amount, SYSDATE)";
+								"VALUES ((SELECT MAX(CUSTOMER_ID) FROM CUSTOMERS), @accountNo, @accountType, @currency, @amount, DATE('now'))";
 			foreach (Account account in customer.CustomerAccounts)
 			{
 				SQLiteParameter accountNoParam = new SQLiteParameter("@accountNo", DbType.Int32);

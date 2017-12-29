@@ -69,16 +69,35 @@ namespace Programming_Engineering_Project
 			}
 
 
-			if (errors.Count == 0) {
+			if (errors.Count == 0)
+			{
 				SQLiteConnection connection = DatabaseConnection.getConnection();
 				connection.Open();
+				SQLiteTransaction transaction = connection.BeginTransaction();
 				ICustomersDAO customersDao = new CustomersDAO();
-				customersDao.addCustomer(customer, connection);
-				customersDao.addCustomerDetails(customer, connection);
 				List<Account> custAccounts = new List<Account>();
 				custAccounts.Add(account);
 				customer.CustomerAccounts = custAccounts;
-				customersDao.addCustomerAccounts(customer, connection);
+
+				try
+				{
+					customersDao.addCustomer(customer, connection);
+					customersDao.addCustomerDetails(customer, connection);
+					customersDao.addCustomerAccounts(customer, connection);
+					transaction.Commit();
+
+					this.LblConfirmationMessage.Visible = true;
+					this.LblConfirmationMessage.Text = "Success!";
+					this.LblConfirmationMessage.ForeColor = System.Drawing.Color.Green;
+				}
+				catch (SQLiteException)
+				{
+					transaction.Rollback();
+
+					this.LblConfirmationMessage.Visible = true;
+					this.LblConfirmationMessage.Text = "Error";
+					this.LblConfirmationMessage.ForeColor = System.Drawing.Color.Red;
+				}
 				connection.Close();
 			}
 

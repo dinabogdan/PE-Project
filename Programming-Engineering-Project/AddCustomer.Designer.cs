@@ -31,6 +31,7 @@ namespace Programming_Engineering_Project
 		private void InitializeComponent()
 		{
 			this.mainPanel = new System.Windows.Forms.Panel();
+			this.lblConfirmationMessage = new System.Windows.Forms.Label();
 			this.lblAccountInfoError = new System.Windows.Forms.Label();
 			this.lblCustDetailsError = new System.Windows.Forms.Label();
 			this.lblCustInfoError = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@ namespace Programming_Engineering_Project
 			// 
 			// mainPanel
 			// 
+			this.mainPanel.Controls.Add(this.lblConfirmationMessage);
 			this.mainPanel.Controls.Add(this.lblAccountInfoError);
 			this.mainPanel.Controls.Add(this.lblCustDetailsError);
 			this.mainPanel.Controls.Add(this.lblCustInfoError);
@@ -117,8 +119,19 @@ namespace Programming_Engineering_Project
 			this.mainPanel.Controls.Add(this.lblCustomerInfo);
 			this.mainPanel.Location = new System.Drawing.Point(13, 13);
 			this.mainPanel.Name = "mainPanel";
-			this.mainPanel.Size = new System.Drawing.Size(477, 398);
+			this.mainPanel.Size = new System.Drawing.Size(477, 446);
 			this.mainPanel.TabIndex = 0;
+			// 
+			// lblConfirmationMessage
+			// 
+			this.lblConfirmationMessage.AutoSize = true;
+			this.lblConfirmationMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblConfirmationMessage.Location = new System.Drawing.Point(16, 411);
+			this.lblConfirmationMessage.Name = "lblConfirmationMessage";
+			this.lblConfirmationMessage.Size = new System.Drawing.Size(0, 24);
+			this.lblConfirmationMessage.TabIndex = 39;
+			this.lblConfirmationMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblConfirmationMessage.Visible = false;
 			// 
 			// lblAccountInfoError
 			// 
@@ -485,7 +498,7 @@ namespace Programming_Engineering_Project
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(508, 420);
+			this.ClientSize = new System.Drawing.Size(508, 471);
 			this.Controls.Add(this.mainPanel);
 			this.Name = "AddCustomer";
 			this.Text = "Add Customer";
@@ -618,5 +631,8 @@ namespace Programming_Engineering_Project
 
 		private Label lblAccountInfoError;
 		public Label LblAccountInfoError { get { return this.lblAccountInfoError; } }
+
+		private Label lblConfirmationMessage;
+		public Label LblConfirmationMessage { get { return this.lblConfirmationMessage; } }
 	}
 }
