@@ -104,7 +104,30 @@ namespace Programming_Engineering_Project
 		{
 			List<Customer> customers = new List<Customer>();
 			SQLiteCommand command = new SQLiteCommand(null, connection);
-			command.CommandText = "SELECT * FROM USERS u";
+			command.CommandText = "SELECT C.FIRST_NAME, C.LAST_NAME, C.CNP, C.BIRTHDATE, " +
+									"CD.PHONE, CD.EMAIL, CD.COUNTRY, CD.COUNTY, CD.CITY, CD.LOCALITY, CD.STREET, CD.STREET_NO " +
+									"FROM CUSTOMERS C, CUST_DETAILS CD WHERE C.CUSTOMER_ID = CD.CUSTOMER_ID";
+
+			using (SQLiteDataReader dataReader = command.ExecuteReader())
+			{
+				while (dataReader.Read())
+				{
+					Customer customer = new Customer();
+					customer.FirstName = dataReader.GetString(0);
+					customer.LastName = dataReader.GetString(1);
+					customer.Cnp = dataReader.GetInt64(2).ToString();
+					customer.BirthDate = dataReader.GetString(3);
+					customer.Phone = dataReader.GetString(4);
+					customer.Email = dataReader.GetString(5);
+					customer.Country = dataReader.GetString(6);
+					customer.County = dataReader.GetString(7);
+					customer.City = dataReader.GetString(8);
+					customer.Locality = dataReader.GetString(9);
+					customer.Street = dataReader.GetString(10);
+					customer.StreetNo = dataReader.GetInt32(11);
+					customers.Add(customer);
+				}
+			}
 
 			return customers;
 		}

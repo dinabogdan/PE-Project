@@ -50,6 +50,9 @@ namespace Programming_Engineering_Project
 			// 
 			// lvMain
 			// 
+			this.lvMain.BackColor = System.Drawing.SystemColors.Menu;
+			this.lvMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lvMain.GridLines = true;
 			this.lvMain.Location = new System.Drawing.Point(12, 12);
 			this.lvMain.Name = "lvMain";
 			this.lvMain.Size = new System.Drawing.Size(628, 229);
@@ -139,6 +142,11 @@ namespace Programming_Engineering_Project
 			get
 			{
 				return this.lvMain;
+			}
+
+			set
+			{
+				this.lvMain = value;
 			}
 		}
 

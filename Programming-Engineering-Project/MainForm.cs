@@ -43,6 +43,11 @@ namespace Programming_Engineering_Project
 			SQLiteConnection connection = DatabaseConnection.getConnection();
 			connection.Open();
 			Console.WriteLine("### Connection is: " + connection.State.ToString());
+			lvMain.View = View.Details;
+			Utils.initCustListViewHeaders(lvMain);
+			ICustomersDAO customersDao = new CustomersDAO();
+			List<Customer> customers = customersDao.getAllCustomers(connection);
+			Utils.addCustomersToListView(lvMain, customers);     
 			connection.Close();
 		}
 

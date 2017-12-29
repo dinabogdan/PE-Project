@@ -21,7 +21,7 @@ namespace Programming_Engineering_Project
 			customer.Cnp = this.TxtBoxCnp.Text;
 			customer.BirthDate = this.DpBirthdate.Text;
 
-			Dictionary<String, String> errors = Utils.validateCustInfo(customer);
+			Dictionary<String, String> errors = Validations.validateCustInfo(customer);
 
 			if (errors.Count != 0)
 			{
@@ -41,7 +41,7 @@ namespace Programming_Engineering_Project
 			customer.Street = this.TxtBoxStreet.Text;
 			customer.StreetNo = Int32.Parse(this.NudStreetNo.Value.ToString());
 
-			errors = Utils.validateCustDetails(customer);
+			errors = Validations.validateCustDetails(customer);
 
 			if (errors.Count != 0)
 			{
@@ -58,7 +58,7 @@ namespace Programming_Engineering_Project
 			account.Currency = this.CbCurrency.SelectedValue.ToString();
 			float amount = 0f; float.TryParse(TxtBoxAmount.Text.ToString(), out amount); account.Ammount = amount;
 
-			errors = Utils.validateCustAccount(account);
+			errors = Validations.validateCustAccount(account);
 			if (errors.Count != 0)
 			{
 				String errorMessage = null;
