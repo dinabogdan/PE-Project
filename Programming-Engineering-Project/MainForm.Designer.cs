@@ -114,6 +114,7 @@ namespace Programming_Engineering_Project
 			this.btnExportXls.TabIndex = 5;
 			this.btnExportXls.Text = "Export";
 			this.btnExportXls.UseVisualStyleBackColor = true;
+			this.btnExportXls.Click += new System.EventHandler(this.btnExportXls_Click);
 			// 
 			// MainForm
 			// 
