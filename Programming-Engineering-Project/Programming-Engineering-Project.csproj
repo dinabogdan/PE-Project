@@ -78,6 +78,7 @@
     <Compile Include="AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExportListViewToXLS.cs" />
     <Compile Include="IAccountsDAO.cs" />
     <Compile Include="ICustomersDAO.cs" />
     <Compile Include="ILoginDAO.cs" />

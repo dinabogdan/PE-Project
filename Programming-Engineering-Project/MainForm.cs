@@ -74,7 +74,8 @@ namespace Programming_Engineering_Project
 
 		private void btnExportXls_Click(object sender, EventArgs e)
 		{
-
+			List<Customer> customers = new List<Customer>();
+			ExportListViewToXLS.exportCustomers(customers);
 		}
 	}
 }

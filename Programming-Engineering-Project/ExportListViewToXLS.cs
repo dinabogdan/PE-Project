@@ -10,25 +10,57 @@ namespace Programming_Engineering_Project
 {
 	class ExportListViewToXLS
 	{
-		public static void exportCustomers(List<Customer> customers, Action<Customer, Excel.Range> DisplayFunction)
+		public static void exportCustomers(List<Customer> customers)
 		{
 			var excelApp = new Excel.Application();
 			excelApp.Workbooks.Add();
 			excelApp.Visible = true;
 
-			excelApp.Range["A1"].Value = "FIRST NAME";
-			excelApp.Range["B1"].Value = "LAST NAME";
-			excelApp.Range["C1"].Value = "CNP";
-			excelApp.Range["D1"].Value = "BIRTHDATE";
-			excelApp.Range["E1"].Value = "PHONE";
-			excelApp.Range["F1"].Value = "EMAIL";
-			excelApp.Range["G1"].Value = "COUNTRY";
-			excelApp.Range["H1"].Value = "COUNTY";
-			excelApp.Range["I1"].Value = "CITY";
-			excelApp.Range["J1"].Value = "LOCALITY";
-			excelApp.Range["K1"].Value = "STREET";
-			excelApp.Range["L1"].Value = "STREET NO.";
+			Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
+			workSheet.Cells[1, "A"] = "FIRST NAME";
+			workSheet.Cells[1, "B"] = "LAST NAME";
+			workSheet.Cells[1, "C"] = "CNP";
+			workSheet.Cells[1, "D"] = "BIRTHDATE";
+			workSheet.Cells[1, "E"] = "PHONE";
+			workSheet.Cells[1, "F"] = "EMAIL";
+			workSheet.Cells[1, "G"] = "COUNTRY";
+			workSheet.Cells[1, "H"] = "COUNTY";
+			workSheet.Cells[1, "I"] = "CITY";
+			workSheet.Cells[1, "J"] = "LOCALITY";
+			workSheet.Cells[1, "K"] = "STREET";
+			workSheet.Cells[1, "L"] = "STREET NO.";
+			
+			var row = 1;
+			foreach (var customer in customers)
+			{
+				row++;
+				workSheet.Cells[row, "A"] = customer.FirstName;
+				workSheet.Cells[row, "B"] = customer.LastName;
+				workSheet.Cells[row, "C"] = customer.Cnp;
+				workSheet.Cells[row, "D"] = customer.BirthDate;
+				workSheet.Cells[row, "E"] = customer.Phone;
+				workSheet.Cells[row, "F"] = customer.Email;
+				workSheet.Cells[row, "G"] = customer.Country;
+				workSheet.Cells[row, "H"] = customer.County;
+				workSheet.Cells[row, "I"] = customer.City;
+				workSheet.Cells[row, "J"] = customer.Locality;
+				workSheet.Cells[row, "K"] = customer.Street;
+				workSheet.Cells[row, "L"] = customer.StreetNo;
+			}
+
+			workSheet.Columns[1].AutoFit();
+			workSheet.Columns[2].AutoFit();
+			workSheet.Columns[3].AutoFit();
+			workSheet.Columns[4].AutoFit();
+			workSheet.Columns[5].AutoFit();
+			workSheet.Columns[6].AutoFit();
+			workSheet.Columns[7].AutoFit();
+			workSheet.Columns[8].AutoFit();
+			workSheet.Columns[9].AutoFit();
+			workSheet.Columns[10].AutoFit();
+			workSheet.Columns[11].AutoFit();
+			workSheet.Columns[12].AutoFit();
 		}
 	}
 }
