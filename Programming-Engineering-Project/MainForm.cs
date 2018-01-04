@@ -49,7 +49,7 @@ namespace Programming_Engineering_Project
 			Utils.initCustListViewHeaders(lvMain);
 			ICustomersDAO customersDao = new CustomersDAO();
 			List<Customer> customers = customersDao.getAllCustomers(connection);
-			Utils.addCustomersToListView(lvMain, customers);     
+			Utils.addCustomersToListView(lvMain, customers);
 			connection.Close();
 		}
 
@@ -74,8 +74,35 @@ namespace Programming_Engineering_Project
 
 		private void btnExportXls_Click(object sender, EventArgs e)
 		{
-			List<Customer> customers = new List<Customer>();
-			ExportListViewToXLS.exportCustomers(customers);
+			if (lvMain.Columns[0].Text.Equals("First Name"))
+			{
+				List<Customer> customers = new List<Customer>();
+				for (int i = 0; i < lvMain.Items.Count; i++)
+				{
+					Customer customer = new Customer();
+					customer.FirstName = lvMain.Items[i].Text;
+					customer.LastName = lvMain.Items[i].SubItems[1].Text;
+					customer.Cnp = lvMain.Items[i].SubItems[2].Text;
+					customer.BirthDate = lvMain.Items[i].SubItems[3].Text;
+					customer.Phone = lvMain.Items[i].SubItems[4].Text;
+					customer.Email = lvMain.Items[i].SubItems[5].Text;
+					customer.Country = lvMain.Items[i].SubItems[6].Text;
+					customer.County = lvMain.Items[i].SubItems[7].Text;
+					customer.City = lvMain.Items[i].SubItems[8].Text;
+					customer.Locality = lvMain.Items[i].SubItems[9].Text;
+					customer.Street = lvMain.Items[i].SubItems[10].Text;
+					customer.StreetNo = System.Int32.Parse(lvMain.Items[i].SubItems[11].Text);
+					customers.Add(customer);
+				}
+				ExportListViewToXLS.exportCustomers(customers);
+			}
+			else if (lvMain.Columns[0].Text.Equals("Account No."))
+			{
+				List<Account> accounts = new List<Account>();
+			}
+
+
+
 		}
 	}
 }
