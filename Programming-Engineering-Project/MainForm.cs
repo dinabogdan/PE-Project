@@ -99,10 +99,18 @@ namespace Programming_Engineering_Project
 			else if (lvMain.Columns[0].Text.Equals("Account No."))
 			{
 				List<Account> accounts = new List<Account>();
+				for (int i = 0; i < lvMain.Items.Count; i++)
+				{
+					Account account = new Account();
+					account.AccountNo = System.Int32.Parse(lvMain.Items[i].Text);
+					account.AccountType = lvMain.Items[i].SubItems[1].Text;
+					account.Currency = lvMain.Items[i].SubItems[2].Text;
+					account.Ammount = float.Parse(lvMain.Items[i].SubItems[3].Text);
+					account.OpenDate = lvMain.Items[i].SubItems[4].Text;
+					accounts.Add(account);
+				}
+				ExportListViewToXLS.exportAccounts(accounts);
 			}
-
-
-
 		}
 	}
 }
