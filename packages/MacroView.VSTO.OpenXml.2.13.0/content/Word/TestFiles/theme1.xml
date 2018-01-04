@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" name="Blue Block">
+	<a:themeElements>
+		<a:clrScheme name="Blue Block">
+			<a:dk1>
+				<a:srgbClr val="414042"/>
+			</a:dk1>
+			<a:lt1>
+				<a:srgbClr val="FFFFFF"/>
+			</a:lt1>
+			<a:dk2>
+				<a:srgbClr val="005A8C"/>
+			</a:dk2>
+			<a:lt2>
+				<a:srgbClr val="C9CAC8"/>
+			</a:lt2>
+			<a:accent1>
+				<a:srgbClr val="005A8C"/>
+			</a:accent1>
+			<a:accent2>
+				<a:srgbClr val="CE8E00"/>
+			</a:accent2>
+			<a:accent3>
+				<a:srgbClr val="008998"/>
+			</a:accent3>
+			<a:accent4>
+				<a:srgbClr val="D2492A"/>
+			</a:accent4>
+			<a:accent5>
+				<a:srgbClr val="614D7D"/>
+			</a:accent5>
+			<a:accent6>
+				<a:srgbClr val="5A8E22"/>
+			</a:accent6>
+			<a:hlink>
+				<a:srgbClr val="263F6A"/>
+			</a:hlink>
+			<a:folHlink>
+				<a:srgbClr val="00B0F0"/>
+			</a:folHlink>
+		</a:clrScheme>
+		<a:fontScheme name="Blue Block">
+			<a:majorFont>
+				<a:latin typeface="Georgia"/>
+				<a:ea typeface="Georgia"/>
+				<a:cs typeface="Georgia"/>
+				<a:font script="Jpan" typeface="ＭＳ Ｐゴシック"/>
+				<a:font script="Hang" typeface="맑은 고딕"/>
+				<a:font script="Hans" typeface="宋体"/>
+				<a:font script="Hant" typeface="新細明體"/>
+				<a:font script="Arab" typeface="Times New Roman"/>
+				<a:font script="Hebr" typeface="Times New Roman"/>
+				<a:font script="Thai" typeface="Angsana New"/>
+				<a:font script="Ethi" typeface="Nyala"/>
+				<a:font script="Beng" typeface="Vrinda"/>
+				<a:font script="Gujr" typeface="Shruti"/>
+				<a:font script="Khmr" typeface="MoolBoran"/>
+				<a:font script="Knda" typeface="Tunga"/>
+				<a:font script="Guru" typeface="Raavi"/>
+				<a:font script="Cans" typeface="Euphemia"/>
+				<a:font script="Cher" typeface="Plantagenet Cherokee"/>
+				<a:font script="Yiii" typeface="Microsoft Yi Baiti"/>
+				<a:font script="Tibt" typeface="Microsoft Himalaya"/>
+				<a:font script="Thaa" typeface="MV Boli"/>
+				<a:font script="Deva" typeface="Mangal"/>
+				<a:font script="Telu" typeface="Gautami"/>
+				<a:font script="Taml" typeface="Latha"/>
+				<a:font script="Syrc" typeface="Estrangelo Edessa"/>
+				<a:font script="Orya" typeface="Kalinga"/>
+				<a:font script="Mlym" typeface="Kartika"/>
+				<a:font script="Laoo" typeface="DokChampa"/>
+				<a:font script="Sinh" typeface="Iskoola Pota"/>
+				<a:font script="Mong" typeface="Mongolian Baiti"/>
+				<a:font script="Viet" typeface="Times New Roman"/>
+				<a:font script="Uigh" typeface="Microsoft Uighur"/>
+			</a:majorFont>
+			<a:minorFont>
+				<a:latin typeface="Calibri"/>
+				<a:ea typeface="Calibri"/>
+				<a:cs typeface="Calibri"/>
+				<a:font script="Jpan" typeface="ＭＳ Ｐゴシック"/>
+				<a:font script="Hang" typeface="맑은 고딕"/>
+				<a:font script="Hans" typeface="宋体"/>
+				<a:font script="Hant" typeface="新細明體"/>
+				<a:font script="Arab" typeface="Arial"/>
+				<a:font script="Hebr" typeface="Arial"/>
+				<a:font script="Thai" typeface="Cordia New"/>
+				<a:font script="Ethi" typeface="Nyala"/>
+				<a:font script="Beng" typeface="Vrinda"/>
+				<a:font script="Gujr" typeface="Shruti"/>
+				<a:font script="Khmr" typeface="DaunPenh"/>
+				<a:font script="Knda" typeface="Tunga"/>
+				<a:font script="Guru" typeface="Raavi"/>
+				<a:font script="Cans" typeface="Euphemia"/>
+				<a:font script="Cher" typeface="Plantagenet Cherokee"/>
+				<a:font script="Yiii" typeface="Microsoft Yi Baiti"/>
+				<a:font script="Tibt" typeface="Microsoft Himalaya"/>
+				<a:font script="Thaa" typeface="MV Boli"/>
+				<a:font script="Deva" typeface="Mangal"/>
+				<a:font script="Telu" typeface="Gautami"/>
+				<a:font script="Taml" typeface="Latha"/>
+				<a:font script="Syrc" typeface="Estrangelo Edessa"/>
+				<a:font script="Orya" typeface="Kalinga"/>
+				<a:font script="Mlym" typeface="Kartika"/>
+				<a:font script="Laoo" typeface="DokChampa"/>
+				<a:font script="Sinh" typeface="Iskoola Pota"/>
+				<a:font script="Mong" typeface="Mongolian Baiti"/>
+				<a:font script="Viet" typeface="Arial"/>
+				<a:font script="Uigh" typeface="Microsoft Uighur"/>
+			</a:minorFont>
+		</a:fontScheme>
+		<a:fmtScheme name="Blue Block">
+			<a:fillStyleLst>
+				<a:solidFill>
+					<a:schemeClr val="phClr"/>
+				</a:solidFill>
+				<a:gradFill rotWithShape="1">
+					<a:gsLst>
+						<a:gs pos="0">
+							<a:schemeClr val="phClr">
+								<a:tint val="50000"/>
+								<a:satMod val="300000"/>
+							</a:schemeClr>
+						</a:gs>
+						<a:gs pos="35000">
+							<a:schemeClr val="phClr">
+								<a:tint val="37000"/>
+								<a:satMod val="300000"/>
+							</a:schemeClr>
+						</a:gs>
+						<a:gs pos="100000">
+							<a:schemeClr val="phClr">
+								<a:tint val="15000"/>
+								<a:satMod val="350000"/>
+							</a:schemeClr>
+						</a:gs>
+					</a:gsLst>
+					<a:lin ang="16200000" scaled="1"/>
+				</a:gradFill>
+				<a:gradFill rotWithShape="1">
+					<a:gsLst>
+						<a:gs pos="0">
+							<a:schemeClr val="phClr">
+								<a:shade val="51000"/>
+								<a:satMod val="130000"/>
+							</a:schemeClr>
+						</a:gs>
+						<a:gs pos="80000">
+							<a:schemeClr val="phClr">
+								<a:shade val="93000"/>
+								<a:satMod val="130000"/>
+							</a:schemeClr>
+						</a:gs>
+						<a:gs pos="100000">
+							<a:schemeClr val="phClr">
+								<a:shade val="94000"/>
+								<a:satMod val="135000"/>
+							</a:schemeClr>
+						</a:gs>
+					</a:gsLst>
+					<a:lin ang="16200000" scaled="0"/>
+				</a:gradFill>
+			</a:fillStyleLst>
+			<a:lnStyleLst>
+				<a:ln w="9525" cap="flat" cmpd="sng" algn="ctr">
+					<a:solidFill>
+						<a:schemeClr val="phClr">
+							<a:shade val="95000"/>
+							<a:satMod val="105000"/>
+						</a:schemeClr>
+					</a:solidFill>
+					<a:prstDash val="solid"/>
+				</a:ln>
+				<a:ln w="25400" cap="flat" cmpd="sng" algn="ctr">
+					<a:solidFill>
+						<a:schemeClr val="phClr"/>
+					</a:solidFill>
+					<a:prstDash val="solid"/>
+				</a:ln>
+				<a:ln w="38100" cap="flat" cmpd="sng" algn="ctr">
+					<a:solidFill>
+						<a:schemeClr val="phClr"/>
+					</a:solidFill>
+					<a:prstDash val="solid"/>
+				</a:ln>
+			</a:lnStyleLst>
+			<a:effectStyleLst>
+				<a:effectStyle>
+					<a:effectLst>
+						<a:outerShdw blurRad="40000" dist="20000" dir="5400000" rotWithShape="0">
+							<a:srgbClr val="000000">
+								<a:alpha val="38000"/>
+							</a:srgbClr>
+						</a:outerShdw>
+					</a:effectLst>
+				</a:effectStyle>
+				<a:effectStyle>
+					<a:effectLst>
+						<a:outerShdw blurRad="40000" dist="23000" dir="5400000" rotWithShape="0">
+							<a:srgbClr val="000000">
+								<a:alpha val="35000"/>
+							</a:srgbClr>
+						</a:outerShdw>
+					</a:effectLst>
+				</a:effectStyle>
+				<a:effectStyle>
+					<a:effectLst>
+						<a:outerShdw blurRad="40000" dist="23000" dir="5400000" rotWithShape="0">
+							<a:srgbClr val="000000">
+								<a:alpha val="35000"/>
+							</a:srgbClr>
+						</a:outerShdw>
+					</a:effectLst>
+					<a:scene3d>
+						<a:camera prst="orthographicFront">
+							<a:rot lat="0" lon="0" rev="0"/>
+						</a:camera>
+						<a:lightRig rig="threePt" dir="t">
+							<a:rot lat="0" lon="0" rev="1200000"/>
+						</a:lightRig>
+					</a:scene3d>
+					<a:sp3d>
+						<a:bevelT w="63500" h="25400"/>
+					</a:sp3d>
+				</a:effectStyle>
+			</a:effectStyleLst>
+			<a:bgFillStyleLst>
+				<a:solidFill>
+					<a:schemeClr val="phClr"/>
+				</a:solidFill>
+				<a:gradFill rotWithShape="1">
+					<a:gsLst>
+						<a:gs pos="0">
+							<a:schemeClr val="phClr">
+								<a:tint val="40000"/>
+								<a:satMod val="350000"/>
+							</a:schemeClr>
+						</a:gs>
+						<a:gs pos="40000">
+							<a:schemeClr val="phClr">
+								<a:tint val="45000"/>
+								<a:shade val="99000"/>
+								<a:satMod val="350000"/>
+							</a:schemeClr>
+						</a:gs>
+						<a:gs pos="100000">
+							<a:schemeClr val="phClr">
+								<a:shade val="20000"/>
+								<a:satMod val="255000"/>
+							</a:schemeClr>
+						</a:gs>
+					</a:gsLst>
+					<a:path path="circle">
+						<a:fillToRect l="50000" t="-80000" r="50000" b="180000"/>
+					</a:path>
+				</a:gradFill>
+				<a:gradFill rotWithShape="1">
+					<a:gsLst>
+						<a:gs pos="0">
+							<a:schemeClr val="phClr">
+								<a:tint val="80000"/>
+								<a:satMod val="300000"/>
+							</a:schemeClr>
+						</a:gs>
+						<a:gs pos="100000">
+							<a:schemeClr val="phClr">
+								<a:shade val="30000"/>
+								<a:satMod val="200000"/>
+							</a:schemeClr>
+						</a:gs>
+					</a:gsLst>
+					<a:path path="circle">
+						<a:fillToRect l="50000" t="50000" r="50000" b="50000"/>
+					</a:path>
+				</a:gradFill>
+			</a:bgFillStyleLst>
+		</a:fmtScheme>
+	</a:themeElements>
+	<a:objectDefaults>
+		<a:spDef>
+			<a:spPr/>
+			<a:bodyPr rtlCol="0" anchor="ctr"/>
+			<a:lstStyle>
+				<a:defPPr algn="ctr">
+					<a:defRPr dirty="0" smtClean="0">
+						<a:solidFill>
+							<a:schemeClr val="bg1"/>
+						</a:solidFill>
+					</a:defRPr>
+				</a:defPPr>
+			</a:lstStyle>
+			<a:style>
+				<a:lnRef idx="2">
+					<a:schemeClr val="accent1">
+						<a:shade val="50000"/>
+					</a:schemeClr>
+				</a:lnRef>
+				<a:fillRef idx="1">
+					<a:schemeClr val="accent1"/>
+				</a:fillRef>
+				<a:effectRef idx="0">
+					<a:schemeClr val="accent1"/>
+				</a:effectRef>
+				<a:fontRef idx="minor">
+					<a:schemeClr val="lt1"/>
+				</a:fontRef>
+			</a:style>
+		</a:spDef>
+	</a:objectDefaults>
+	<a:extraClrSchemeLst/>
+	<a:custClrLst>
+		<a:custClr name="Brand Palette 1">
+			<a:srgbClr val="263F6A"/>
+		</a:custClr>
+		<a:custClr name="Brand Palette 2">
+			<a:srgbClr val="8E908F"/>
+		</a:custClr>
+		<a:custClr name="Brand Palette 3">
+			<a:srgbClr val="1E1E1E"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="Soft Palette 1">
+			<a:srgbClr val="5E9CAE"/>
+		</a:custClr>
+		<a:custClr name="Soft Palette 2">
+			<a:srgbClr val="71A28A"/>
+		</a:custClr>
+		<a:custClr name="Soft Palette 3">
+			<a:srgbClr val="AD8AB8"/>
+		</a:custClr>
+		<a:custClr name="Soft Palette 4">
+			<a:srgbClr val="E3D000"/>
+		</a:custClr>
+		<a:custClr name="Soft Palette 5">
+			<a:srgbClr val="D4BF95"/>
+		</a:custClr>
+		<a:custClr name="Soft Palette 6">
+			<a:srgbClr val="CACAC8"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="Medium Palette 1">
+			<a:srgbClr val="005A8C"/>
+		</a:custClr>
+		<a:custClr name="Medium Palette 2">
+			<a:srgbClr val="266B42"/>
+		</a:custClr>
+		<a:custClr name="Medium Palette 3">
+			<a:srgbClr val="A33038"/>
+		</a:custClr>
+		<a:custClr name="Medium Palette 4">
+			<a:srgbClr val="97683E"/>
+		</a:custClr>
+		<a:custClr name="Medium Palette 5">
+			<a:srgbClr val="624D7D"/>
+		</a:custClr>
+		<a:custClr name="Medium Palette 6">
+			<a:srgbClr val="642566"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="Vibrant Palette 1">
+			<a:srgbClr val="0082C0"/>
+		</a:custClr>
+		<a:custClr name="Vibrant Palette 2">
+			<a:srgbClr val="5A8E22"/>
+		</a:custClr>
+		<a:custClr name="Vibrant Palette 3">
+			<a:srgbClr val="BE0f34"/>
+		</a:custClr>
+		<a:custClr name="Vibrant Palette 4">
+			<a:srgbClr val="CE8E00"/>
+		</a:custClr>
+		<a:custClr name="Vibrant Palette 5">
+			<a:srgbClr val="007987"/>
+		</a:custClr>
+		<a:custClr name="Vibrant Palette 6">
+			<a:srgbClr val="D6492A"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+		<a:custClr name="White">
+			<a:srgbClr val="FFFFFF"/>
+		</a:custClr>
+	</a:custClrLst>
+	<a:extLst>
+		<a:ext uri="{05A4C25C-085E-4340-85A3-A5531E510DB2}">
+			<thm15:themeFamily xmlns:thm15="http://schemas.microsoft.com/office/thememl/2012/main" name="Blue Block" id="{655CAC40-71DA-49FF-8C47-C337D6C2B706}" vid="{323A7011-94A8-4436-9D21-91FBB1E0D181}"/>
+		</a:ext>
+	</a:extLst>
+</a:theme>
