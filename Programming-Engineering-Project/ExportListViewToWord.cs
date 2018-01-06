@@ -7,6 +7,73 @@ namespace Programming_Engineering_Project
 {
 	class ExportListViewToWord
 	{
+		public static void exportAccounts(List<Account> accounts)
+		{
+			Word.Application wordApp = new Word.Application();
+			wordApp.ShowAnimation = false;
+			wordApp.Visible = false;
+			object missingValue = System.Reflection.Missing.Value;
+			Word.Document document = wordApp.Documents.Add(ref missingValue, ref missingValue, ref missingValue, ref missingValue);
+
+			foreach (Word.Section section in document.Sections)
+			{
+				Word.Range headerRange = section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
+				headerRange.Fields.Add(headerRange, Word.WdFieldType.wdFieldPage);
+				headerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+				headerRange.Font.ColorIndex = Word.WdColorIndex.wdBlue;
+				headerRange.Font.Size = 12;
+				headerRange.Text = "List of accounts";
+			}
+
+			foreach (Word.Section section in document.Sections)
+			{
+				Word.Range footerRange = section.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
+				footerRange.Font.ColorIndex = Word.WdColorIndex.wdDarkRed;
+				footerRange.Font.Size = 12;
+				footerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+				footerRange.Text = "Programming Engineering";
+			}
+
+			document.Content.SetRange(0, 0);
+			foreach (Account account in accounts)
+			{
+				document.Content.Text = "Account details" + Environment.NewLine;
+
+				Word.Paragraph accountNumberParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				object styleHeading = "Heading 2";
+				accountNumberParagraph.set_Style(styleHeading);
+				accountNumberParagraph.Range.Text = "Account Number: " + account.AccountNo;
+				accountNumberParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph accountTypeParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				accountTypeParagraph.set_Style(styleHeading);
+				accountTypeParagraph.Range.Text = "Account Type: " + account.AccountType;
+				accountTypeParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph currencyParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				currencyParagraph.set_Style(styleHeading);
+				currencyParagraph.Range.Text = "Currency: " + account.Currency;
+				currencyParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph amountParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				amountParagraph.set_Style(styleHeading);
+				amountParagraph.Range.Text = "Amount: " + account.Ammount;
+				amountParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph openDateParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				openDateParagraph.set_Style(styleHeading);
+				openDateParagraph.Range.Text = "Open Date: " + account.OpenDate;
+				openDateParagraph.Range.InsertParagraphAfter();
+			}
+
+			object filename = @"C:\Accounts.docx";
+			document.SaveAs2(ref filename);
+			document.Close(ref missingValue, ref missingValue, ref missingValue);
+			document = null;
+			wordApp.Quit(ref missingValue, ref missingValue, ref missingValue);
+			wordApp = null;
+		}
+
 		public static void exportCustomers(List<Customer> customers)
 		{
 			Word.Application wordApp = new Word.Application();
@@ -58,8 +125,6 @@ namespace Programming_Engineering_Project
 				birthDateParagraph.Range.set_Style(ref styleHeading);
 				birthDateParagraph.Range.Text = "Birthdate: " + customer.BirthDate;
 				birthDateParagraph.Range.InsertParagraphAfter();
-
-				document.Content.Text = "Customer Details" + Environment.NewLine;
 
 				Word.Paragraph phoneParagraph = document.Content.Paragraphs.Add(ref missingValue);
 				phoneParagraph.Range.set_Style(ref styleHeading);
