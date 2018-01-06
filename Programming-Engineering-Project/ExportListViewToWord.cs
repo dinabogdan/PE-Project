@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Word = Microsoft.Office.Interop.Word;
 
 
@@ -10,7 +7,7 @@ namespace Programming_Engineering_Project
 {
 	class ExportListViewToWord
 	{
-		public static void exportCustomers()
+		public static void exportCustomers(List<Customer> customers)
 		{
 			Word.Application wordApp = new Word.Application();
 			wordApp.ShowAnimation = false;
@@ -38,21 +35,74 @@ namespace Programming_Engineering_Project
 			}
 
 			document.Content.SetRange(0, 0);
-			document.Content.Text = "This is a test document " + Environment.NewLine;
+			foreach (Customer customer in customers)
+			{
+				document.Content.Text = "Customer informations" + Environment.NewLine;
+				Word.Paragraph firstNameParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				object styleHeading = "Heading 2";
+				firstNameParagraph.Range.set_Style(ref styleHeading);
+				firstNameParagraph.Range.Text = "First Name: " + customer.FirstName;
+				firstNameParagraph.Range.InsertParagraphAfter();
 
-			Word.Paragraph paragraph1 = document.Content.Paragraphs.Add(ref missingValue);
-			object styleHeading1 = "Heading 1";
-			paragraph1.Range.set_Style(ref styleHeading1);
-			paragraph1.Range.Text = "Paragraph 1 text";
-			paragraph1.Range.InsertParagraphAfter();
+				Word.Paragraph lastNameParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				lastNameParagraph.Range.set_Style(ref styleHeading);
+				lastNameParagraph.Range.Text = "Last Name: " + customer.LastName;
+				lastNameParagraph.Range.InsertParagraphAfter();
 
-			Word.Paragraph paragraph2 = document.Content.Paragraphs.Add(ref missingValue);
-			object styleHeading2 = "Heading 2";
-			paragraph2.Range.set_Style(ref styleHeading2);
-			paragraph2.Range.Text = "Paragraph 2 text";
-			paragraph2.Range.InsertParagraphAfter();
+				Word.Paragraph cnpParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				cnpParagraph.Range.set_Style(ref styleHeading);
+				cnpParagraph.Range.Text = "CNP: " + customer.Cnp;
+				cnpParagraph.Range.InsertParagraphAfter();
 
-			object filename = @"C:\temp1.docx";
+				Word.Paragraph birthDateParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				birthDateParagraph.Range.set_Style(ref styleHeading);
+				birthDateParagraph.Range.Text = "Birthdate: " + customer.BirthDate;
+				birthDateParagraph.Range.InsertParagraphAfter();
+
+				document.Content.Text = "Customer Details" + Environment.NewLine;
+
+				Word.Paragraph phoneParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				phoneParagraph.Range.set_Style(ref styleHeading);
+				phoneParagraph.Range.Text = "Customer's phone: " + customer.Phone;
+				phoneParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph emailParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				emailParagraph.Range.set_Style(ref styleHeading);
+				emailParagraph.Range.Text = "Customer's email: " + customer.Email;
+				emailParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph countryParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				countryParagraph.Range.set_Style(ref styleHeading);
+				countryParagraph.Range.Text = "Customer's country: " + customer.Country;
+				countryParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph countyParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				countyParagraph.Range.set_Style(ref styleHeading);
+				countyParagraph.Range.Text = "Customer's county: " + customer.County;
+				countyParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph cityParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				cityParagraph.Range.set_Style(ref styleHeading);
+				cityParagraph.Range.Text = "Customer's city: " + customer.City;
+				cityParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph localityParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				localityParagraph.Range.set_Style(ref styleHeading);
+				localityParagraph.Range.Text = "Customer's locality: " + customer.Locality;
+				localityParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph streetParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				streetParagraph.Range.set_Style(ref styleHeading);
+				streetParagraph.Range.Text = "Customer's street: " + customer.Street;
+				streetParagraph.Range.InsertParagraphAfter();
+
+				Word.Paragraph streetNoParagraph = document.Content.Paragraphs.Add(ref missingValue);
+				streetNoParagraph.Range.set_Style(ref styleHeading);
+				streetNoParagraph.Range.Text = "Customer's street no.: " + customer.StreetNo;
+				streetNoParagraph.Range.InsertParagraphAfter();
+			}
+
+			object filename = @"C:\Customers.docx";
 			document.SaveAs2(ref filename);
 			document.Close(ref missingValue, ref missingValue, ref missingValue);
 			document = null;
