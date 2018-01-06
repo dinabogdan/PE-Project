@@ -112,5 +112,10 @@ namespace Programming_Engineering_Project
 				ExportListViewToXLS.exportAccounts(accounts);
 			}
 		}
+
+		private void btnExportDoc_Click(object sender, EventArgs e)
+		{
+			ExportListViewToWord.exportCustomers();
+		}
 	}
 }

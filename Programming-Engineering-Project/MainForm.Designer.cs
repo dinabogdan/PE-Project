@@ -38,6 +38,7 @@ namespace Programming_Engineering_Project
 			this.btnAllAccounts = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnExportXls = new System.Windows.Forms.Button();
+			this.btnExportDoc = new System.Windows.Forms.Button();
 			this.mainPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -116,11 +117,25 @@ namespace Programming_Engineering_Project
 			this.btnExportXls.UseVisualStyleBackColor = true;
 			this.btnExportXls.Click += new System.EventHandler(this.btnExportXls_Click);
 			// 
+			// btnExportDoc
+			// 
+			this.btnExportDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExportDoc.Image = ((System.Drawing.Image)(resources.GetObject("btnExportDoc.Image")));
+			this.btnExportDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnExportDoc.Location = new System.Drawing.Point(253, 44);
+			this.btnExportDoc.Name = "btnExportDoc";
+			this.btnExportDoc.Size = new System.Drawing.Size(129, 39);
+			this.btnExportDoc.TabIndex = 6;
+			this.btnExportDoc.Text = "Export";
+			this.btnExportDoc.UseVisualStyleBackColor = true;
+			this.btnExportDoc.Click += new System.EventHandler(this.btnExportDoc_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(676, 355);
+			this.Controls.Add(this.btnExportDoc);
 			this.Controls.Add(this.btnExportXls);
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.btnAllAccounts);
@@ -145,6 +160,7 @@ namespace Programming_Engineering_Project
 		private Button btnAllAccounts;
 		private Button btnAdd;
 		private Button btnExportXls;
+		private Button btnExportDoc;
 
 		public Panel MainPanel
 		{
