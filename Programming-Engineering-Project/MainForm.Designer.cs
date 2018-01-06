@@ -39,6 +39,7 @@ namespace Programming_Engineering_Project
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnExportXls = new System.Windows.Forms.Button();
 			this.btnExportDoc = new System.Windows.Forms.Button();
+			this.btnEdit = new System.Windows.Forms.Button();
 			this.mainPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -47,17 +48,21 @@ namespace Programming_Engineering_Project
 			this.mainPanel.Controls.Add(this.lvMain);
 			this.mainPanel.Location = new System.Drawing.Point(12, 89);
 			this.mainPanel.Name = "mainPanel";
-			this.mainPanel.Size = new System.Drawing.Size(652, 254);
+			this.mainPanel.Size = new System.Drawing.Size(790, 254);
 			this.mainPanel.TabIndex = 0;
 			// 
 			// lvMain
 			// 
 			this.lvMain.BackColor = System.Drawing.SystemColors.Menu;
+			this.lvMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.lvMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lvMain.FullRowSelect = true;
 			this.lvMain.GridLines = true;
+			this.lvMain.HideSelection = false;
 			this.lvMain.Location = new System.Drawing.Point(12, 12);
+			this.lvMain.MultiSelect = false;
 			this.lvMain.Name = "lvMain";
-			this.lvMain.Size = new System.Drawing.Size(628, 229);
+			this.lvMain.Size = new System.Drawing.Size(763, 229);
 			this.lvMain.TabIndex = 0;
 			this.lvMain.UseCompatibleStateImageBehavior = false;
 			// 
@@ -130,11 +135,25 @@ namespace Programming_Engineering_Project
 			this.btnExportDoc.UseVisualStyleBackColor = true;
 			this.btnExportDoc.Click += new System.EventHandler(this.btnExportDoc_Click);
 			// 
+			// btnEdit
+			// 
+			this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+			this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEdit.Location = new System.Drawing.Point(658, 44);
+			this.btnEdit.Name = "btnEdit";
+			this.btnEdit.Size = new System.Drawing.Size(129, 39);
+			this.btnEdit.TabIndex = 7;
+			this.btnEdit.Text = "Edit";
+			this.btnEdit.UseVisualStyleBackColor = true;
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(676, 355);
+			this.ClientSize = new System.Drawing.Size(814, 349);
+			this.Controls.Add(this.btnEdit);
 			this.Controls.Add(this.btnExportDoc);
 			this.Controls.Add(this.btnExportXls);
 			this.Controls.Add(this.btnAdd);
@@ -161,6 +180,7 @@ namespace Programming_Engineering_Project
 		private Button btnAdd;
 		private Button btnExportXls;
 		private Button btnExportDoc;
+		private Button btnEdit;
 
 		public Panel MainPanel
 		{

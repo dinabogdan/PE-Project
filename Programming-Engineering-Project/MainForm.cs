@@ -147,5 +147,12 @@ namespace Programming_Engineering_Project
 				MessageBox.Show("Document created successfully!");
 			}
 		}
+
+		private void btnEdit_Click(object sender, EventArgs e)
+		{
+			String selectedItem = LvMain.SelectedItems[0].SubItems[1].ToString();
+			MessageBox.Show(selectedItem);
+
+		}
 	}
 }
