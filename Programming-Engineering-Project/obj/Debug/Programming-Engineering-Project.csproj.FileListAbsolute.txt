@@ -46,3 +46,4 @@ C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engi
 C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\bin\Debug\en-GB\MacroView.VSTO.resources.dll
 C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\bin\Debug\zh-CHS\MacroView.VSTO.resources.dll
 C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\bin\Debug\zh-CHT\MacroView.VSTO.resources.dll
+C:\Users\c026dinab\source\repos\Programming-Engineering-Project\Programming-Engineering-Project\obj\Debug\Programming_Engineering_Project.EditCustomer.resources

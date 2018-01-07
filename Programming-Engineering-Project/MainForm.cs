@@ -151,8 +151,21 @@ namespace Programming_Engineering_Project
 		private void btnEdit_Click(object sender, EventArgs e)
 		{
 			String selectedItem = LvMain.SelectedItems[0].SubItems[1].ToString();
-			MessageBox.Show(selectedItem);
-
+			EditCustomer editCustomerForm = new EditCustomer();
+			editCustomerForm.TxtBoxFirstName.Text = LvMain.SelectedItems[0].Text;
+			editCustomerForm.TxtBoxLastName.Text = LvMain.SelectedItems[0].SubItems[1].Text;
+			editCustomerForm.TxtBoxCnp.Text = LvMain.SelectedItems[0].SubItems[2].Text;
+			editCustomerForm.DpBirthdate.Text = LvMain.SelectedItems[0].SubItems[3].Text;
+			editCustomerForm.TxtBoxPhone.Text = LvMain.SelectedItems[0].SubItems[4].Text;
+			editCustomerForm.TxtBoxEmail.Text = LvMain.SelectedItems[0].SubItems[5].Text;
+			editCustomerForm.TxtBoxCountry.Text = LvMain.SelectedItems[0].SubItems[6].Text;
+			editCustomerForm.TxtBoxCounty.Text = LvMain.SelectedItems[0].SubItems[7].Text;
+			editCustomerForm.TxtBoxCity.Text = LvMain.SelectedItems[0].SubItems[8].Text;
+			editCustomerForm.TxtBoxLocality.Text = LvMain.SelectedItems[0].SubItems[9].Text;
+			editCustomerForm.TxtBoxStreet.Text = LvMain.SelectedItems[0].SubItems[10].Text;
+			editCustomerForm.NudStreetNo.Value = System.Decimal.Parse(LvMain.SelectedItems[0].SubItems[11].Text);
+			this.Hide();
+			editCustomerForm.Show();
 		}
 	}
 }

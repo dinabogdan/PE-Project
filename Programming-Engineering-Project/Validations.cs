@@ -82,7 +82,7 @@ namespace Programming_Engineering_Project
 
 			if (!String.IsNullOrWhiteSpace(customer.Country))
 			{
-				if (!customer.Country.Equals("Romania")) { errors.Add("countryErr", "Country must be 'Romania'!"); return errors; }
+				if (!(customer.Country.Equals("Romania") || customer.Country.Equals("ROMANIA"))) { errors.Add("countryErr", "Country must be 'Romania'!"); return errors; }
 			}
 			else
 			{

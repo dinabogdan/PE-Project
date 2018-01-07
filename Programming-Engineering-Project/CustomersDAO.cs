@@ -131,5 +131,69 @@ namespace Programming_Engineering_Project
 
 			return customers;
 		}
+
+		public void updateCustomer(Customer customer, SQLiteConnection connection)
+		{
+			using (SQLiteCommand command = new SQLiteCommand(connection))
+			{
+				command.CommandText = "UPDATE CUSTOMERS SET FIRST_NAME=@firstName, LAST_NAME=@lastName, BIRTHDATE=@birthDate WHERE CNP=@cnp";
+
+				SQLiteParameter firstNameParam = new SQLiteParameter("@firstName", DbType.String);
+				SQLiteParameter lastNameParam = new SQLiteParameter("@lastName", DbType.String);
+				SQLiteParameter cnpParam = new SQLiteParameter("@cnp", DbType.String);
+				SQLiteParameter birthDateParam = new SQLiteParameter("@birthDate", DbType.String);
+
+				firstNameParam.Value = customer.FirstName;
+				lastNameParam.Value = customer.LastName;
+				cnpParam.Value = customer.Cnp;
+				birthDateParam.Value = customer.BirthDate;
+
+				command.Parameters.Add(firstNameParam);
+				command.Parameters.Add(lastNameParam);
+				command.Parameters.Add(cnpParam);
+				command.Parameters.Add(birthDateParam);
+
+				command.Prepare();
+				command.ExecuteNonQuery();
+			}
+
+			using (SQLiteCommand command = new SQLiteCommand(connection))
+			{
+				command.CommandText = "UPDATE CUST_DETAILS SET PHONE=@phone, EMAIL=@email, COUNTRY=@country, COUNTY=@county, CITY=@city, LOCALITY=@locality, STREET=@street, STREET_NO=@streetNo " +
+										"WHERE CUSTOMER_ID=(SELECT CUSTOMER_ID FROM CUSTOMERS WHERE CNP=@cnp)";
+				SQLiteParameter phoneParam = new SQLiteParameter("@phone", DbType.String);
+				SQLiteParameter emailParam = new SQLiteParameter("@email", DbType.String);
+				SQLiteParameter countryParam = new SQLiteParameter("@country", DbType.String);
+				SQLiteParameter countyParam = new SQLiteParameter("@county", DbType.String);
+				SQLiteParameter cityParam = new SQLiteParameter("@city", DbType.String);
+				SQLiteParameter localityParam = new SQLiteParameter("@locality", DbType.String);
+				SQLiteParameter streetParam = new SQLiteParameter("@street", DbType.String);
+				SQLiteParameter streetNoParam = new SQLiteParameter("@streetNo", DbType.Int16);
+				SQLiteParameter cnpParam = new SQLiteParameter("@cnp", DbType.String);
+
+				phoneParam.Value = customer.Phone;
+				emailParam.Value = customer.Email;
+				countryParam.Value = customer.Country;
+				countyParam.Value = customer.County;
+				cityParam.Value = customer.City;
+				localityParam.Value = customer.Locality;
+				streetParam.Value = customer.Street;
+				streetNoParam.Value = customer.StreetNo;
+				cnpParam.Value = customer.Cnp;
+
+				command.Parameters.Add(phoneParam);
+				command.Parameters.Add(emailParam);
+				command.Parameters.Add(countryParam);
+				command.Parameters.Add(countyParam);
+				command.Parameters.Add(cityParam);
+				command.Parameters.Add(localityParam);
+				command.Parameters.Add(streetParam);
+				command.Parameters.Add(streetNoParam);
+				command.Parameters.Add(cnpParam);
+
+				command.Prepare();
+				command.ExecuteNonQuery();
+			}
+		}
 	}
 }
